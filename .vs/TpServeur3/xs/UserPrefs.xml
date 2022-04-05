@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{5227A5AE-AA19-4702-B54B-3369D2E0DF50}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
+    <Files>
+      <File FileName="appsettings.json" Line="12" Column="22" />
+      <File FileName="Startup.cs" Line="43" Column="58" />
+      <File FileName="Models/Produit.cs" />
+      <File FileName="Models/Image.cs" />
+      <File FileName="Models/Categorie.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TpServeur3" expanded="True">
+            <Node name="TpServeur3" expanded="True">
+              <Node name="Areas" expanded="True">
+                <Node name="Identity" expanded="True">
+                  <Node name="Pages" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Views" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.TpServeur3 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
