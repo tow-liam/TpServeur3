@@ -1,25 +1,19 @@
 ﻿<Properties StartupConfiguration="{5227A5AE-AA19-4702-B54B-3369D2E0DF50}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/TpContext.cs">
     <Files>
-      <File FileName="appsettings.json" Line="12" Column="22" />
-      <File FileName="Startup.cs" Line="43" Column="58" />
-      <File FileName="Models/Produit.cs" />
-      <File FileName="Models/Image.cs" />
-      <File FileName="Models/Categorie.cs" />
+      <File FileName="Models/Produit.cs" Line="13" Column="47" />
+      <File FileName="Models/Image.cs" Line="9" Column="45" />
+      <File FileName="Models/Categorie.cs" Line="9" Column="40" />
+      <File FileName="Models/TpContext.cs" Line="8" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TpServeur3" expanded="True">
             <Node name="TpServeur3" expanded="True">
-              <Node name="Areas" expanded="True">
-                <Node name="Identity" expanded="True">
-                  <Node name="Pages" expanded="True" />
-                </Node>
+              <Node name="Models" expanded="True">
+                <Node name="TpContext.cs" selected="True" />
               </Node>
-              <Node name="Data" expanded="True" />
-              <Node name="Views" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>
