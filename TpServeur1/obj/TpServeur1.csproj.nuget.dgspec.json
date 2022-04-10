@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\1453304\\source\\repos\\TpServeur1\\TpServeur1\\TpServeur1.csproj": {}
+    "/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/TpServeur1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\1453304\\source\\repos\\TpServeur1\\TpServeur1\\TpServeur1.csproj": {
+    "/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/TpServeur1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\1453304\\source\\repos\\TpServeur1\\TpServeur1\\TpServeur1.csproj",
+        "projectUniqueName": "/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/TpServeur1.csproj",
         "projectName": "TpServeur1",
-        "projectPath": "C:\\Users\\1453304\\source\\repos\\TpServeur1\\TpServeur1\\TpServeur1.csproj",
-        "packagesPath": "C:\\Users\\1453304\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\1453304\\source\\repos\\TpServeur1\\TpServeur1\\obj\\",
+        "projectPath": "/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/TpServeur1.csproj",
+        "packagesPath": "/Users/liammckeown/.nuget/packages/",
+        "outputPath": "/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\1453304\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/liammckeown/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,7 +50,15 @@
               "target": "Package",
               "version": "[5.0.15, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[5.0.15, )"
             },
@@ -69,6 +71,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.10, )"
             }
           },
           "imports": [
@@ -89,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
         }
       }
     }

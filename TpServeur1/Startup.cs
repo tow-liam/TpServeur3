@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TpServeur1.Data;
+using TpServeur1.Models;
 
 namespace TpServeur1
 {
@@ -27,8 +28,8 @@ namespace TpServeur1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
+            services.AddDbContext<TpContext>(options =>
+                options.UseMySQL(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -36,12 +37,12 @@ namespace TpServeur1
             .AddDefaultTokenProviders()
              .AddDefaultUI()
             .AddRoles<IdentityRole>()
-        .AddEntityFrameworkStores<ApplicationDbContext>();
+        .AddEntityFrameworkStores<TpContext>();
 
             services.AddControllersWithViews();
             services.Configure<IdentityOptions>(options =>
             {
-                // Configuration des paramètres du mot de passe.
+                // Configuration des param?tres du mot de passe.
                 options.Password.RequireDigit = true;
                 options.Password.RequireLowercase = true;
                 options.Password.RequireNonAlphanumeric = true;
@@ -54,7 +55,7 @@ namespace TpServeur1
                 options.Lockout.MaxFailedAccessAttempts = 5;
                 options.Lockout.AllowedForNewUsers = true;
 
-                // Configuration des paramètres utilisateur.
+                // Configuration des param?tres utilisateur.
                 options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
                 options.User.RequireUniqueEmail = false;
             });
@@ -77,7 +78,8 @@ namespace TpServeur1
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            //var context = services.GetRequiredService<TpContext>();
+            //DbInitializer.Initialize(context);
             app.UseRouting();
             CreateRoles(services).Wait();
             app.UseAuthentication();
