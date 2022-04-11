@@ -28,6 +28,10 @@ namespace TpServeur1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseMySQL(
+                    Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDbContext<TpContext>(options =>
                 options.UseMySQL(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -37,7 +41,7 @@ namespace TpServeur1
             .AddDefaultTokenProviders()
              .AddDefaultUI()
             .AddRoles<IdentityRole>()
-        .AddEntityFrameworkStores<TpContext>();
+        .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddControllersWithViews();
             services.Configure<IdentityOptions>(options =>
