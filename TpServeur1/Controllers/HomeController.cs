@@ -23,9 +23,14 @@ namespace TpServeur1.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
         {
             return View();
+        }
+
+        public IActionResult Repair()
+        {
+            return File("~/Documents/Lorem_ipsum.pdf", "application/pdf");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

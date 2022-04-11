@@ -1,17 +1,30 @@
 ﻿<Properties StartupConfiguration="{1921EE69-4027-4FAC-BBC5-41CB41C8A474}|Default">
   <MonoDevelop.Ide.ItemProperties.TpServeur1 PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TpServeur1/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TpServeur1/Migrations/20220410222206_First.cs">
     <Files>
-      <File FileName="TpServeur1/Startup.cs" Line="32" Column="34" />
+      <File FileName="TpServeur1/Startup.cs" Line="34" Column="55" />
+      <File FileName="TpServeur1/Views/Home/About.cshtml" Line="2" Column="34" />
+      <File FileName="TpServeur1/Controllers/HomeController.cs" Line="27" Column="10" />
+      <File FileName="TpServeur1/Views/Shared/_LoginPartial.cshtml" Line="1" Column="1" />
+      <File FileName="TpServeur1/Program.cs" Line="16" Column="1" />
+      <File FileName="TpServeur1/Data/ApplicationDbContext.cs" Line="9" Column="38" />
+      <File FileName="TpServeur1/Migrations/TpContextModelSnapshot.cs" Line="1" Column="1" />
+      <File FileName="TpServeur1/Migrations/20220410222206_First.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TpServeur1" expanded="True">
             <Node name="TpServeur1" expanded="True">
-              <Node name="Migrations" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Migrations" expanded="True">
+                <Node name="20220410222206_First.cs" expanded="True" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

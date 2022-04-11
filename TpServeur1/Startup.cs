@@ -31,13 +31,16 @@ namespace TpServeur1
             services.AddDbContext<TpContext>(options =>
                 options.UseMySQL(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseMySQL(
+                    Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddIdentity<IdentityUser, IdentityRole>()
             .AddDefaultTokenProviders()
              .AddDefaultUI()
             .AddRoles<IdentityRole>()
-        .AddEntityFrameworkStores<TpContext>();
+        .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddControllersWithViews();
             services.Configure<IdentityOptions>(options =>
