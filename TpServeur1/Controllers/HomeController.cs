@@ -23,7 +23,7 @@ namespace TpServeur1.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult APropos()
         {
             return View();
         }
