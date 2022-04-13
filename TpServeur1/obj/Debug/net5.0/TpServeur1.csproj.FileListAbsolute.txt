@@ -536,7 +536,6 @@ C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net
 C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\Razor\Views\Categorie\Edit.cshtml.g.cs
 C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\Razor\Views\Categorie\Index.cshtml.g.cs
 C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\Razor\Views\Produit\Create.cshtml.g.cs
 C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\Razor\Views\Produit\Delete.cshtml.g.cs
 C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\Razor\Views\Produit\Details.cshtml.g.cs
@@ -556,3 +555,4 @@ C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net
 C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\ref\TpServeur1.dll
 C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\TpServeur1.pdb
 C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\TpServeur1.genruntimeconfig.cache
+C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\Razor\Views\Home\APropos.cshtml.g.cs
