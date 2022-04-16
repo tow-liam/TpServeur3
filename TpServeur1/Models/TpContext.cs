@@ -18,6 +18,9 @@ namespace TpServeur1.Models
         public virtual DbSet<Produit> Produits { get; set; }
         public virtual DbSet<Panier> Paniers { get; set; }
 
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

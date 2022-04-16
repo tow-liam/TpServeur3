@@ -8,6 +8,7 @@ namespace TpServeur1.Models
     public class Produit
     {
         public int Id { get; set; }
+        public int? ImageId { get; set; }
         public Image Image { get; set; }
         public string Nom { get; set; }
         public string Description { get; set; }

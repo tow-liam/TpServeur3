@@ -26,17 +26,17 @@
                                 Catégories
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" asp-controller="Produit" asp-action="Index">Hockey</a>
-                                <a class="dropdown-item" asp-controller="Produit" asp-action="Index">Soccer</a>
-                                <a class="dropdown-item" asp-controller="Produit" asp-action="Index">Baseball</a>
-                                <a class="dropdown-item" asp-controller="Produit" asp-action="Index">Vélo</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Produits" asp-route-categorieId="1">Hockey</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Produits" asp-route-categorieId="2">Soccer</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Produits" asp-route-categorieId="3">Baseball</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Produits" asp-route-categorieId="4">Vélo</a>
                             </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Réparations</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Avis</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Avis">Avis</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="APropos">À Propos</a>

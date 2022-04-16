@@ -80,10 +80,11 @@ namespace TpServeur1
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            UpdateDatabase(app);
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            //var context = services.GetRequiredService<TpContext>();
-            //DbInitializer.Initialize(context);
+            var context = services.GetRequiredService<TpContext>();
+            DbInitializer.Initialize(context);
             app.UseRouting();
             CreateRoles(services).Wait();
             app.UseAuthentication();
@@ -127,6 +128,19 @@ namespace TpServeur1
                 await UserManager.CreateAsync(user, "179P@ssw0rd");
             }
             await UserManager.AddToRoleAsync(user, "Administrateur");
+        }
+
+        private static void UpdateDatabase(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices
+                        .GetRequiredService<IServiceScopeFactory>()
+                        .CreateScope())
+            {
+                using (var context = serviceScope.ServiceProvider.GetService<TpContext>())
+                {
+                    context.Database.Migrate();
+                }
+            }
         }
 
     }

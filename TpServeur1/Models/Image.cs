@@ -9,7 +9,7 @@ namespace TpServeur1.Models
     {
         public int Id { get; set; }
         public string Nom { get; set; }
-        public int ProduitId { get; set; }
-        public Produit Produit { get; set; }
+        public byte[] ImageData { get; set; }
+        public string ContentType { get; set; }
     }
 }
