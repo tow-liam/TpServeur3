@@ -75,6 +75,10 @@
             "MySql.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.10, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[39.105.0, )"
             }
           },
           "imports": [

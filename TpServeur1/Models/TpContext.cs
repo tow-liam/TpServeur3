@@ -13,10 +13,13 @@ namespace TpServeur1.Models
 
         }
 
-        public virtual DbSet<Categorie> Categories { get; set; }
-        public virtual DbSet<Image> Images { get; set; }
-        public virtual DbSet<Produit> Produits { get; set; }
-        public virtual DbSet<Panier> Paniers { get; set; }
+        public DbSet<Categorie> Categories { get; set; }
+        public DbSet<Image> Images { get; set; }
+        public DbSet<Produit> Produits { get; set; }
+        public DbSet<Panier> Panier { get; set; }
+        public DbSet<ItemPanier> ItemPanier { get; set; }
+        public DbSet<Commande> Commande { get; set; }
+        public DbSet<ItemCommande> ItemCommande { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

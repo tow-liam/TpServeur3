@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -15,10 +16,12 @@ namespace TpServeur1.Controllers
     public class ProduitController : Controller
     {
         private readonly TpContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public ProduitController(TpContext context)
+        public ProduitController(TpContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Produit
@@ -211,6 +214,47 @@ namespace TpServeur1.Controllers
         private bool ProduitExists(int id)
         {
             return _context.Produits.Any(e => e.Id == id);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> AjoutPanier(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var current_User = _userManager.GetUserAsync(HttpContext.User).Result;
+            string current_User_Id = (current_User != null) ? "" + current_User.Id : "";
+
+            var panier = _context.Panier.FirstOrDefault(x => x.UserGuid == current_User_Id);
+
+            if (panier == null)
+            {
+                panier = new Panier()
+                {
+                    UserGuid = current_User_Id,
+                    ItemPanier = new List<ItemPanier>()
+                };
+                _context.Add(panier);
+                await _context.SaveChangesAsync();
+            }
+            var item = _context.ItemPanier.FirstOrDefault(x => x.PanierID == panier.Id && x.ProduitID == id.Value);
+
+            if (item == null)
+            {
+                item = new ItemPanier() { PanierID = panier.Id, ProduitID = id.Value, Quantite = 1 };
+                _context.Add(item);
+            }
+            else
+            {
+                item.Quantite++;
+                _context.Update(item);
+            }
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

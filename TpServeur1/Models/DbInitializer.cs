@@ -23,15 +23,15 @@ namespace TpServeur1.Models
             if (!context.Produits.Any())
             {
                 var produits = new List<Produit>() {
-                    new Produit{Nom="Gant d'hockey",Description="Noir et rouge",Marque="Bauer", Taille=Size.Medium, QteInventaire=5, CategorieId=1},
-                    new Produit{Nom="Gant d'hockey",Description="Noir et rouge",Marque="Bauer", Taille=Size.Petit, QteInventaire=5, CategorieId=1},
-                    new Produit{Nom="Gant d'hockey",Description="Blanc et or",Marque="CCM", Taille=Size.Medium, QteInventaire=5, CategorieId=1},
-                    new Produit{Nom="Soulier à crampon",Description="Blanc et or",Marque="Nike", Taille=Size.Medium, QteInventaire=5, CategorieId=2},
-                    new Produit{Nom="Soulier à crampon",Description="Noir et arc-en-ciel",Marque="Adidas", Taille=Size.Medium, QteInventaire=5, CategorieId=2},
-                    new Produit{Nom="Gant de baseball",Description="Rouge",Marque="Adidas", Taille=Size.Medium, QteInventaire=5, CategorieId=3},
-                    new Produit{Nom="Bâton de baseball",Description="Noir",Marque="Easton", QteInventaire=5, CategorieId=3},
-                    new Produit{Nom="Vélo de route",Description="Vert",Marque="Giant", Taille=Size.Medium, QteInventaire=5, CategorieId=4},
-                    new Produit{Nom="Vélo de montagne",Description="Bleu",Marque="Norco", Taille=Size.Medium, QteInventaire=5, CategorieId=4},
+                    new Produit{Nom="Gant d'hockey",Description="Noir et rouge",Marque="Bauer", Taille=Size.Medium, QteInventaire=5, CategorieId=1, Prix=99.99},
+                    new Produit{Nom="Gant d'hockey",Description="Noir et rouge",Marque="Bauer", Taille=Size.Petit, QteInventaire=5, CategorieId=1, Prix=99.99},
+                    new Produit{Nom="Gant d'hockey",Description="Blanc et or",Marque="CCM", Taille=Size.Medium, QteInventaire=5, CategorieId=1, Prix=89.99},
+                    new Produit{Nom="Soulier à crampon",Description="Blanc et or",Marque="Nike", Taille=Size.Medium, QteInventaire=5, CategorieId=2, Prix=59.99},
+                    new Produit{Nom="Soulier à crampon",Description="Noir et arc-en-ciel",Marque="Adidas", Taille=Size.Medium, QteInventaire=5, CategorieId=2, Prix=79.99},
+                    new Produit{Nom="Gant de baseball",Description="Rouge",Marque="Adidas", Taille=Size.Medium, QteInventaire=5, CategorieId=3, Prix=69.99},
+                    new Produit{Nom="Bâton de baseball",Description="Noir",Marque="Easton", QteInventaire=5, CategorieId=3, Prix=119.99},
+                    new Produit{Nom="Vélo de route",Description="Vert",Marque="Giant", Taille=Size.Medium, QteInventaire=5, CategorieId=4, Prix=6999.99},
+                    new Produit{Nom="Vélo de montagne",Description="Bleu",Marque="Norco", Taille=Size.Medium, QteInventaire=5, CategorieId=4, Prix=4999.99},
                 };
                 context.Produits.AddRange(produits);
             }

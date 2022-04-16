@@ -32,6 +32,11 @@ namespace TpServeur1.Controllers
             return View();
         }
 
+        public IActionResult Reparations()
+        {
+            return File("~/Documents/Atelier.pdf", "application/pdf");
+        }
+
         [Authorize]
         public IActionResult Avis()
         {

@@ -18,6 +18,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.15" />
     <PackageReference Include="MySql.EntityFrameworkCore" Version="5.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.15" />
+    <PackageReference Include="Stripe.net" Version="39.105.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,5 +26,10 @@
     <None Remove="MySql.Data.EntityFrameworkCore" />
     <None Remove="MySql.EntityFrameworkCore" />
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
+    <None Remove="Stripe.net" />
+    <None Remove="Config\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
   </ItemGroup>
 </Project>

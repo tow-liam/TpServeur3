@@ -568,3 +568,16 @@ C:/Users/domin/OneDrive/Bureau/ecole/Bloc_4/Serveur3/TP/TpServeur1/obj/Debug/net
 /Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/Produit/Edit.cshtml.g.cs
 /Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/Produit/Index.cshtml.g.cs
 /Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/Home/Avis.cshtml.g.cs
+/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/ItemPanier/Create.cshtml.g.cs
+/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/ItemPanier/Delete.cshtml.g.cs
+/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/ItemPanier/Details.cshtml.g.cs
+/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/ItemPanier/Edit.cshtml.g.cs
+/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/ItemPanier/Index.cshtml.g.cs
+/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/Paiement/Index.cshtml.g.cs
+/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/Paiement/TraiterPaiement.cshtml.g.cs
+/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/Panier/Create.cshtml.g.cs
+/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/Panier/Delete.cshtml.g.cs
+/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/Panier/Details.cshtml.g.cs
+/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/Panier/Edit.cshtml.g.cs
+/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/Debug/net5.0/Razor/Views/Panier/Index.cshtml.g.cs
+/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/bin/Debug/net5.0/Stripe.net.dll

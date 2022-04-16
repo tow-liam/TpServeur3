@@ -31,6 +31,20 @@ namespace TpServeur1.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("TpServeur1.Models.Commande", b =>
+                {
+                    b.Property<int>("CommandeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserGuid")
+                        .HasColumnType("text");
+
+                    b.HasKey("CommandeID");
+
+                    b.ToTable("Commande");
+                });
+
             modelBuilder.Entity("TpServeur1.Models.Image", b =>
                 {
                     b.Property<int>("Id")
@@ -51,15 +65,69 @@ namespace TpServeur1.Migrations
                     b.ToTable("Images");
                 });
 
+            modelBuilder.Entity("TpServeur1.Models.ItemCommande", b =>
+                {
+                    b.Property<int>("ItemCommandeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("CommandeID")
+                        .HasColumnType("int");
+
+                    b.Property<double>("MontantUnitaire")
+                        .HasColumnType("double");
+
+                    b.Property<int>("ProduitID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantite")
+                        .HasColumnType("int");
+
+                    b.HasKey("ItemCommandeID");
+
+                    b.HasIndex("CommandeID");
+
+                    b.HasIndex("ProduitID");
+
+                    b.ToTable("ItemCommande");
+                });
+
+            modelBuilder.Entity("TpServeur1.Models.ItemPanier", b =>
+                {
+                    b.Property<int>("ItemPanierID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("PanierID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProduitID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantite")
+                        .HasColumnType("int");
+
+                    b.HasKey("ItemPanierID");
+
+                    b.HasIndex("PanierID");
+
+                    b.HasIndex("ProduitID");
+
+                    b.ToTable("ItemPanier");
+                });
+
             modelBuilder.Entity("TpServeur1.Models.Panier", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("UserGuid")
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Paniers");
+                    b.ToTable("Panier");
                 });
 
             modelBuilder.Entity("TpServeur1.Models.Produit", b =>
@@ -83,8 +151,8 @@ namespace TpServeur1.Migrations
                     b.Property<string>("Nom")
                         .HasColumnType("text");
 
-                    b.Property<int?>("PanierId")
-                        .HasColumnType("int");
+                    b.Property<double>("Prix")
+                        .HasColumnType("double");
 
                     b.Property<int>("QteInventaire")
                         .HasColumnType("int");
@@ -98,9 +166,45 @@ namespace TpServeur1.Migrations
 
                     b.HasIndex("ImageId");
 
-                    b.HasIndex("PanierId");
-
                     b.ToTable("Produits");
+                });
+
+            modelBuilder.Entity("TpServeur1.Models.ItemCommande", b =>
+                {
+                    b.HasOne("TpServeur1.Models.Commande", "Commande")
+                        .WithMany("Items")
+                        .HasForeignKey("CommandeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TpServeur1.Models.Produit", "Produit")
+                        .WithMany()
+                        .HasForeignKey("ProduitID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Commande");
+
+                    b.Navigation("Produit");
+                });
+
+            modelBuilder.Entity("TpServeur1.Models.ItemPanier", b =>
+                {
+                    b.HasOne("TpServeur1.Models.Panier", "Panier")
+                        .WithMany("ItemPanier")
+                        .HasForeignKey("PanierID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TpServeur1.Models.Produit", "Produit")
+                        .WithMany("ItemPanier")
+                        .HasForeignKey("ProduitID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Panier");
+
+                    b.Navigation("Produit");
                 });
 
             modelBuilder.Entity("TpServeur1.Models.Produit", b =>
@@ -115,10 +219,6 @@ namespace TpServeur1.Migrations
                         .WithMany()
                         .HasForeignKey("ImageId");
 
-                    b.HasOne("TpServeur1.Models.Panier", null)
-                        .WithMany("Produits")
-                        .HasForeignKey("PanierId");
-
                     b.Navigation("Categorie");
 
                     b.Navigation("Image");
@@ -129,9 +229,19 @@ namespace TpServeur1.Migrations
                     b.Navigation("Produits");
                 });
 
+            modelBuilder.Entity("TpServeur1.Models.Commande", b =>
+                {
+                    b.Navigation("Items");
+                });
+
             modelBuilder.Entity("TpServeur1.Models.Panier", b =>
                 {
-                    b.Navigation("Produits");
+                    b.Navigation("ItemPanier");
+                });
+
+            modelBuilder.Entity("TpServeur1.Models.Produit", b =>
+                {
+                    b.Navigation("ItemPanier");
                 });
 #pragma warning restore 612, 618
         }

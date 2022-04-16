@@ -1,0 +1,65 @@
+﻿@model TpServeur1.Models.Panier
+@using System.Globalization
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Mon panier</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserGuid)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserGuid)
+        </dd>
+    </dl>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(x => x.ItemPanier.FirstOrDefault().Produit.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(x => x.ItemPanier.FirstOrDefault().Produit.Prix)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(x => x.ItemPanier.FirstOrDefault().Quantite)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ItemPanier)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(x => item.Produit.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => item.Produit.Prix)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => item.Quantite)
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                    <b>Total : @Model.ItemPanier.Sum(x => x.Quantite * x.Produit.Prix).ToString("C", CultureInfo.CurrentCulture)</b>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-controller="Paiement" asp-action="Index" asp-route-id="@Model.Id">Procéder au paiement</a> |
+    <a asp-controller="Produit" asp-action="Index">Continuer les achats</a>
+</div>

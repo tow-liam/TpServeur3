@@ -11,30 +11,38 @@
     <div class="container">
         <div class="row">
             <div class="card">
-                <img src="~/images/hockey.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Nos équipements de hockey.</p>
-                </div>
+                <a class="dropdown-item" asp-controller="Home" asp-action="Produits" asp-route-categorieId="1">
+                    <img src="~/images/hockey.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Nos équipements de hockey.</p>
+                    </div>
+                </a>
             </div>
             <div class="card">
-                <img src="~/images/baseball.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Nos équipements de baseball.</p>
-                </div>
+                <a class="dropdown-item" asp-controller="Home" asp-action="Produits" asp-route-categorieId="2">
+                    <img src="~/images/baseball.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Nos équipements de baseball.</p>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="row">
             <div class="card">
-                <img src="~/images/soccer.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Nos équipements de soccer.</p>
-                </div>
+                <a class="dropdown-item" asp-controller="Home" asp-action="Produits" asp-route-categorieId="3">
+                    <img src="~/images/soccer.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Nos équipements de soccer.</p>
+                    </div>
+                </a>
             </div>
             <div class="card">
-                <img src="~/images/velo.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Nos équipements de vélo.</p>
-                </div>
+                <a class="dropdown-item" asp-controller="Home" asp-action="Produits" asp-route-categorieId="4">
+                    <img src="~/images/velo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Nos équipements de vélo.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

@@ -7,10 +7,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Stripe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TpServeur1.Config;
 using TpServeur1.Data;
 using TpServeur1.Models;
 
@@ -63,12 +65,13 @@ namespace TpServeur1
                 options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
                 options.User.RequireUniqueEmail = false;
             });
-
+            services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider services)
         {
+            UpdateDatabase(app);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -80,7 +83,7 @@ namespace TpServeur1
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            UpdateDatabase(app);
+            StripeConfiguration.ApiKey = Configuration.GetValue<string>("Stripe:SecretKey");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             var context = services.GetRequiredService<TpContext>();
@@ -136,6 +139,10 @@ namespace TpServeur1
                         .GetRequiredService<IServiceScopeFactory>()
                         .CreateScope())
             {
+                using (var context = serviceScope.ServiceProvider.GetService<ApplicationDbContext>())
+                {
+                    context.Database.Migrate();
+                }
                 using (var context = serviceScope.ServiceProvider.GetService<TpContext>())
                 {
                     context.Database.Migrate();

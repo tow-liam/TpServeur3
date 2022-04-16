@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<div class="text-center">
+    <label class="text-info">Votre paiement a été traité.</label>
+    <br />
+    <br />
+    <p class="blockquote text-center">
+        Les détails de la transaction : <br />
+        Numéro de commande : @ViewBag.NoCommande<br />
+        Client : @ViewBag.Client <br /><br />
+        Montant : @ViewBag.MontantPaye $
+    </p>
+</div>

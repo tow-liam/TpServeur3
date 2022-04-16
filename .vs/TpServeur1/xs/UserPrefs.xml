@@ -1,30 +1,26 @@
 ﻿<Properties StartupConfiguration="{1921EE69-4027-4FAC-BBC5-41CB41C8A474}|Default">
   <MonoDevelop.Ide.ItemProperties.TpServeur1 PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TpServeur1/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TpServeur1/Views/Home/Index.cshtml">
     <Files>
-      <File FileName="TpServeur1/Startup.cs" Line="89" Column="1" />
-      <File FileName="TpServeur1/Controllers/HomeController.cs" Line="32" Column="10" />
-      <File FileName="TpServeur1/Views/Home/Produits.cshtml" Line="33" Column="19" />
-      <File FileName="TpServeur1/Views/Produit/Index.cshtml" Line="1" Column="1" />
-      <File FileName="TpServeur1/Controllers/ProduitController.cs" Line="23" Column="1" />
-      <File FileName="TpServeur1/Models/DbInitializer.cs" Line="20" Column="14" />
-      <File FileName="TpServeur1/Views/Home/Avis.cshtml" Line="3" Column="2" />
-      <File FileName="TpServeur1/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
-      <File FileName="TpServeur1/Models/Produit.cs" Line="16" Column="42" />
-      <File FileName="TpServeur1/Program.cs" Line="16" Column="1" />
+      <File FileName="TpServeur1/Startup.cs" Line="131" Column="54" />
+      <File FileName="TpServeur1/Views/Home/Index.cshtml" Line="13" Column="31" />
+      <File FileName="TpServeur1/Views/Shared/_Layout.cshtml" Line="29" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TpServeur1" expanded="True">
             <Node name="TpServeur1" expanded="True">
+              <Node name="Config" expanded="True" />
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
+                <Node name="Home" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
+                <Node name="Panier" expanded="True" />
+                <Node name="Produit" expanded="True" />
                 <Node name="Shared" expanded="True" />
               </Node>
-              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
