@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\domin\\OneDrive\\Bureau\\ecole\\Bloc_4\\Serveur3\\TP\\TpServeur1\\TpServeur1.csproj": {}
+    "/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/TpServeur1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\domin\\OneDrive\\Bureau\\ecole\\Bloc_4\\Serveur3\\TP\\TpServeur1\\TpServeur1.csproj": {
+    "/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/TpServeur1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\domin\\OneDrive\\Bureau\\ecole\\Bloc_4\\Serveur3\\TP\\TpServeur1\\TpServeur1.csproj",
+        "projectUniqueName": "/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/TpServeur1.csproj",
         "projectName": "TpServeur1",
-        "projectPath": "C:\\Users\\domin\\OneDrive\\Bureau\\ecole\\Bloc_4\\Serveur3\\TP\\TpServeur1\\TpServeur1.csproj",
-        "packagesPath": "C:\\Users\\domin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\domin\\OneDrive\\Bureau\\ecole\\Bloc_4\\Serveur3\\TP\\TpServeur1\\obj\\",
+        "projectPath": "/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/TpServeur1.csproj",
+        "packagesPath": "/Users/liammckeown/.nuget/packages/",
+        "outputPath": "/Users/liammckeown/Documents/ProgServeurIII/TpServeur3/TpServeur1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\domin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/liammckeown/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -51,6 +49,12 @@
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[5.0.15, )"
+            },
+            "Microsoft.CodeAnalysis.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -101,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.405/RuntimeIdentifierGraph.json"
         }
       }
     }

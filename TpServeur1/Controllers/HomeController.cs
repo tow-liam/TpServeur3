@@ -2,11 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
+using TpServeur1.Config;
 using TpServeur1.Models;
 
 namespace TpServeur1.Controllers
@@ -15,6 +18,7 @@ namespace TpServeur1.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly TpContext _context;
+        private readonly SMTPConfig configSMTP;
 
         public HomeController(ILogger<HomeController> logger, TpContext context)
         {
@@ -41,6 +45,29 @@ namespace TpServeur1.Controllers
         public IActionResult Avis()
         {
             return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult DonnezAvis(string email, string review)
+        {
+            SmtpClient smtpClient = new SmtpClient(configSMTP.Serveur, configSMTP.Port);
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = new System.Net.NetworkCredential(configSMTP.Utilisateur, configSMTP.MotDePasse);
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.EnableSsl = true;
+
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(email, "Client Sport Suprême");
+            mail.To.Add(new MailAddress("1453304@cstjean.qc.ca"));
+            mail.Subject = "Nouvel avis de client";
+            mail.SubjectEncoding = System.Text.Encoding.UTF8;
+            mail.Body = review;
+            mail.BodyEncoding = System.Text.Encoding.UTF8;
+            
+            smtpClient.Send(mail);
+            mail.Dispose();
+            return View("Merci");
         }
 
         public async Task<IActionResult> Produits(int? categorieId)

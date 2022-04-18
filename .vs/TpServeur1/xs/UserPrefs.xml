@@ -1,10 +1,12 @@
 ﻿<Properties StartupConfiguration="{1921EE69-4027-4FAC-BBC5-41CB41C8A474}|Default">
   <MonoDevelop.Ide.ItemProperties.TpServeur1 PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TpServeur1/Controllers/ProduitController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TpServeur1/Views/Shared/_LoginPartial.cshtml">
     <Files>
-      <File FileName="TpServeur1/Views/Home/Avis.cshtml" Line="14" Column="47" />
+      <File FileName="TpServeur1/Views/Home/Avis.cshtml" Line="16" Column="59" />
       <File FileName="TpServeur1/Views/Panier/Create.cshtml" Line="23" Column="16" />
-      <File FileName="TpServeur1/Controllers/ProduitController.cs" Line="15" Column="5" />
+      <File FileName="TpServeur1/Controllers/ProduitController.cs" Line="209" Column="46" />
+      <File FileName="TpServeur1/Controllers/HomeController.cs" Line="32" Column="10" />
+      <File FileName="TpServeur1/Views/Shared/_LoginPartial.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,13 +14,12 @@
           <Node name="TpServeur1" expanded="True">
             <Node name="TpServeur1" expanded="True">
               <Node name="Config" expanded="True" />
-              <Node name="Controllers" expanded="True">
-                <Node name="ProduitController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Panier" expanded="True" />
-                <Node name="Shared" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_LoginPartial.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

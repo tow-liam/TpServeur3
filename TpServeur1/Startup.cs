@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration; 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Stripe;
@@ -66,6 +66,7 @@ namespace TpServeur1
                 options.User.RequireUniqueEmail = false;
             });
             services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
+            services.Configure<SMTPConfig>(Configuration.GetSection("SiteConfig").GetSection("SMTP"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
