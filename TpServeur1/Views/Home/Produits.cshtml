@@ -1,42 +1,32 @@
-﻿@{
-    ViewData["Title"] = "Produits";
-}
-@model IEnumerable<TpServeur1.Models.Produit>
-<header>
-    <div>
-        <img class="img-fluid" alt="Responsive image" src="images/facebook_cover_photo_1.png" />
-    </div>
-</header>
+﻿@model IEnumerable<TpServeur1.Models.Produit>
+
+<!DOCTYPE html>
+
 
 <body>
     <div class="container">
         <div class="row">
-            <div class="card">
-                <img src="~/images/hockey.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Nos équipements de hockey.</p>
+            @foreach (var item in Model)
+            {
+                <div class=".col-sm-4">
+                    <div class="card">
+                        @if (item.ImageId != null)
+                        {
+                            <img class="card-img-top" alt="..." src="@string.Format("data:{0};base64,{1}", item.Image.ContentType, Convert.ToBase64String(item.Image.ImageData))" width="100" height="100" />
+                        }
+                        <div class="card-body">
+                            <p class="card-text">
+                                @Html.DisplayFor(modelItem => item.Nom)
+                            </p>
+                            <p class="card-text">
+                                Disponibles: @Html.DisplayFor(modelItem => item.QteInventaire)
+                            </p>
+                            <a asp-action="Details" asp-controller="Produit" asp-route-id="@item.Id" class="btn btn-primary">Détails</a>
+                            <button class="btn btn-primary">Ajouter au panier</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="~/images/baseball.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Nos équipements de baseball.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <img src="~/images/soccer.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Nos équipements de soccer.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="~/images/velo.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Nos équipements de vélo.</p>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </body>
