@@ -21,7 +21,7 @@
                             <p class="card-text">
                                 Disponibles: @Html.DisplayFor(modelItem => item.QteInventaire)
                             </p>
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Détails</a>
+                            <a asp-action="Details" asp-controller="Produit" asp-route-id="@item.Id" class="btn btn-primary">Détails</a>
                             <button class="btn btn-primary">Ajouter au panier</button>
                         </div>
                     </div>

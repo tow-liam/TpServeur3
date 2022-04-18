@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TpServeur1.Models;
 
 namespace TpServeur1.Data
 {
@@ -40,5 +41,7 @@ namespace TpServeur1.Data
                 entity.Property(m => m.Name).HasMaxLength(127);
             });
         }
+
+        public DbSet<TpServeur1.Models.Produit> Produit { get; set; }
     }
 }
