@@ -595,3 +595,4 @@ C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net
 C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\ref\TpServeur1.dll
 C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\TpServeur1.pdb
 C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\TpServeur1.genruntimeconfig.cache
+C:\Users\domin\OneDrive\Bureau\ecole\Bloc_4\Serveur3\TP\TpServeur1\obj\Debug\net5.0\TpServeur1.csproj.AssemblyReference.cache

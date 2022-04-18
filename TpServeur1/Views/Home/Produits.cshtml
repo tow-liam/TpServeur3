@@ -1,42 +1,74 @@
-﻿@{
-    ViewData["Title"] = "Produits";
-}
-@model IEnumerable<TpServeur1.Models.Produit>
-<header>
-    <div>
-        <img class="img-fluid" alt="Responsive image" src="images/facebook_cover_photo_1.png" />
-    </div>
-</header>
+﻿@model IEnumerable<TpServeur1.Models.Produit>
 
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="card">
-                <img src="~/images/hockey.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Nos équipements de hockey.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="~/images/baseball.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Nos équipements de baseball.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <img src="~/images/soccer.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Nos équipements de soccer.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="~/images/velo.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Nos équipements de vélo.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Image
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Marque)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Taille)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.QteInventaire)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categorie)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (item.ImageId != null)
+                        {
+                            <img src="@string.Format("data:{0};base64,{1}", item.Image.ContentType, Convert.ToBase64String(item.Image.ImageData))" width="75" height="75" />
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marque)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Taille)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QteInventaire)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categorie.Id)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </body>
+</html>
