@@ -20,6 +20,7 @@ namespace TpServeur1.Models
         public DbSet<ItemPanier> ItemPanier { get; set; }
         public DbSet<Commande> Commande { get; set; }
         public DbSet<ItemCommande> ItemCommande { get; set; }
+        public DbSet<Evaluation> Evaluations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

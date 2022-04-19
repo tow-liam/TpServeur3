@@ -20,10 +20,11 @@ namespace TpServeur1.Controllers
         private readonly TpContext _context;
         private readonly SMTPConfig configSMTP;
 
-        public HomeController(ILogger<HomeController> logger, TpContext context)
+        public HomeController(ILogger<HomeController> logger, TpContext context, IOptions<SMTPConfig> config)
         {
             _logger = logger;
             _context = context;
+            configSMTP = config.Value;
         }
 
         public IActionResult Index()
@@ -49,7 +50,7 @@ namespace TpServeur1.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult DonnezAvis(string email, string review)
+        public IActionResult DonnezAvis(string prenom, string nom, string email, string review)
         {
             SmtpClient smtpClient = new SmtpClient(configSMTP.Serveur, configSMTP.Port);
             smtpClient.UseDefaultCredentials = false;
@@ -60,11 +61,14 @@ namespace TpServeur1.Controllers
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(email, "Client Sport Suprême");
             mail.To.Add(new MailAddress("1453304@cstjean.qc.ca"));
-            mail.Subject = "Nouvel avis de client";
+            mail.Subject = "Nouvel avis de " + prenom + " " + nom;
             mail.SubjectEncoding = System.Text.Encoding.UTF8;
             mail.Body = review;
             mail.BodyEncoding = System.Text.Encoding.UTF8;
-            
+
+            Evaluation evaluation = new Evaluation { Prenom = prenom, Nom = nom, Courriel = email, Avis = review };
+            _context.Evaluations.Add(evaluation);
+            _context.SaveChanges();
             smtpClient.Send(mail);
             mail.Dispose();
             return View("Merci");
