@@ -2,14 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Net.Mail;
 using System.Threading.Tasks;
-using TpServeur1.Config;
 using TpServeur1.Models;
 
 namespace TpServeur1.Controllers
@@ -18,13 +13,12 @@ namespace TpServeur1.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly TpContext _context;
-        private readonly SMTPConfig configSMTP;
+        
 
-        public HomeController(ILogger<HomeController> logger, TpContext context, IOptions<SMTPConfig> config)
+        public HomeController(ILogger<HomeController> logger, TpContext context)
         {
             _logger = logger;
             _context = context;
-            configSMTP = config.Value;
         }
 
         public IActionResult Index()
@@ -37,41 +31,14 @@ namespace TpServeur1.Controllers
             return View();
         }
 
-        public IActionResult Reparations()
-        {
-            return File("~/Documents/Atelier.pdf", "application/pdf");
-        }
-
-        [Authorize]
-        public IActionResult Avis()
+        public IActionResult Merci()
         {
             return View();
         }
 
-        [Authorize]
-        [HttpPost]
-        public IActionResult DonnezAvis(string prenom, string nom, string email, string review)
+        public IActionResult Reparations()
         {
-            SmtpClient smtpClient = new SmtpClient(configSMTP.Serveur, configSMTP.Port);
-            smtpClient.UseDefaultCredentials = false;
-            smtpClient.Credentials = new System.Net.NetworkCredential(configSMTP.Utilisateur, configSMTP.MotDePasse);
-            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtpClient.EnableSsl = true;
-
-            MailMessage mail = new MailMessage();
-            mail.From = new MailAddress(email, "Client Sport Suprême");
-            mail.To.Add(new MailAddress("1453304@cstjean.qc.ca"));
-            mail.Subject = "Nouvel avis de " + prenom + " " + nom;
-            mail.SubjectEncoding = System.Text.Encoding.UTF8;
-            mail.Body = review;
-            mail.BodyEncoding = System.Text.Encoding.UTF8;
-
-            Evaluation evaluation = new Evaluation { Prenom = prenom, Nom = nom, Courriel = email, Avis = review };
-            _context.Evaluations.Add(evaluation);
-            _context.SaveChanges();
-            smtpClient.Send(mail);
-            mail.Dispose();
-            return View("Merci");
+            return File("~/Documents/Atelier.pdf", "application/pdf");
         }
 
         public async Task<IActionResult> Produits(int? categorieId)

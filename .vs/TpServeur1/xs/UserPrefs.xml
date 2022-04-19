@@ -1,27 +1,26 @@
 ﻿<Properties StartupConfiguration="{1921EE69-4027-4FAC-BBC5-41CB41C8A474}|Default">
   <MonoDevelop.Ide.ItemProperties.TpServeur1 PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TpServeur1/Views/Shared/_LoginPartial.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TpServeur1/Views/Produit/Index.cshtml">
     <Files>
-      <File FileName="TpServeur1/Views/Home/Avis.cshtml" Line="15" Column="85" />
-      <File FileName="TpServeur1/Views/Panier/Create.cshtml" Line="23" Column="16" />
-      <File FileName="TpServeur1/Controllers/ProduitController.cs" Line="209" Column="46" />
-      <File FileName="TpServeur1/Views/Shared/_LoginPartial.cshtml" Line="1" Column="1" />
+      <File FileName="TpServeur1/Views/Shared/_LoginPartial.cshtml" Line="20" Column="95" />
+      <File FileName="TpServeur1/Controllers/AvisController.cs" Line="78" Column="67" />
+      <File FileName="TpServeur1/Startup.cs" Line="132" Column="65" />
+      <File FileName="TpServeur1/Controllers/HomeController.cs" Line="37" Column="10" />
+      <File FileName="TpServeur1/Views/Shared/_Layout.cshtml" Line="39" Column="121" />
+      <File FileName="TpServeur1/Views/Produit/Edit.cshtml" Line="66" Column="37" />
+      <File FileName="TpServeur1/Views/Produit/Index.cshtml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TpServeur1" expanded="True">
             <Node name="TpServeur1" expanded="True">
-              <Node name="Config" expanded="True" />
               <Node name="Controllers" expanded="True" />
-              <Node name="Migrations" expanded="True" />
-              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
-                <Node name="ItemPanier" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="_LoginPartial.cshtml" selected="True" />
+                <Node name="Produit" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
                 </Node>
+                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>

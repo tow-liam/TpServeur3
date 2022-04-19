@@ -1,8 +1,4 @@
-@model IEnumerable<TpServeur1.Models.Categorie>
-
-@{
-    Layout = null;
-}
+@model IEnumerable<TpServeur1.Models.Avis>
 
 <!DOCTYPE html>
 
@@ -12,14 +8,20 @@
     <title>Index</title>
 </head>
 <body>
-<p>
-    <a asp-action="Create">Ajouter</a>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Prenom)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Courriel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Commentaire)
             </th>
             <th></th>
         </tr>
@@ -28,7 +30,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.Prenom)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Courriel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Commentaire)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Modifier</a> |
