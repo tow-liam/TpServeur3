@@ -12,7 +12,7 @@ using TpServeur1.Models;
 
 namespace TpServeur1.Controllers
 {
-    [Authorize(Roles = "Administrateur")]
+    
     public class ProduitController : Controller
     {
         private readonly TpContext _context;
@@ -24,6 +24,7 @@ namespace TpServeur1.Controllers
             _userManager = userManager;
         }
 
+        [Authorize(Roles = "Administrateur")]
         // GET: Produit
         public async Task<IActionResult> Index()
         {
@@ -50,6 +51,7 @@ namespace TpServeur1.Controllers
             return View(produit);
         }
 
+        [Authorize(Roles = "Administrateur")]
         // GET: Produit/Create
         public IActionResult Create()
         {
@@ -58,6 +60,7 @@ namespace TpServeur1.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Administrateur")]
         // POST: Produit/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -97,6 +100,7 @@ namespace TpServeur1.Controllers
             return View(produit);
         }
 
+        [Authorize(Roles = "Administrateur")]
         // GET: Produit/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -115,6 +119,7 @@ namespace TpServeur1.Controllers
             return View(produit);
         }
 
+        [Authorize(Roles = "Administrateur")]
         // POST: Produit/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -181,6 +186,7 @@ namespace TpServeur1.Controllers
             return View(produit);
         }
 
+        [Authorize(Roles = "Administrateur")]
         // GET: Produit/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -200,6 +206,7 @@ namespace TpServeur1.Controllers
             return View(produit);
         }
 
+        [Authorize(Roles = "Administrateur")]
         // POST: Produit/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
