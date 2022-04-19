@@ -154,7 +154,7 @@ namespace TpServeur1.Controllers
             var itemPanier = await _context.ItemPanier.FindAsync(id);
             _context.ItemPanier.Remove(itemPanier);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Details", "Panier");
         }
 
         private bool ItemPanierExists(int id)

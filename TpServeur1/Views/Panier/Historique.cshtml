@@ -1,0 +1,57 @@
+﻿@model IEnumerable<TpServeur1.Models.Commande>
+@using System.Globalization
+
+@{
+    ViewData["Title"] = "Historique";
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+   <h1>Mon historique</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Image
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CommandeID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserGuid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Items)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CommandeID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserGuid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Items)
+                    </td>
+
+                    <td>
+                        <a  asp-action="Index" asp-route-id="@item.CommandeID">Details</a> |
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

@@ -25,6 +25,7 @@ namespace TpServeur1.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Image>(entity => entity.Property(x => x.ImageData).HasColumnType("longblob"));
         }
     }
 }

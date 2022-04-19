@@ -66,7 +66,7 @@ namespace TpServeur1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nom,Description,Marque,Taille,QteInventaire,CategorieId")] Produit produit)
+        public async Task<IActionResult> Create([Bind("Id,Nom,Description,Marque,Taille,Prix,QteInventaire,CategorieId,ImageId")] Produit produit)
         {
             if (ModelState.IsValid)
             {
@@ -125,7 +125,7 @@ namespace TpServeur1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nom,Description,Marque,Taille,QteInventaire,CategorieId, ImageId")] Produit produit)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nom,Description,Marque,Taille,QteInventaire,Prix,CategorieId, ImageId")] Produit produit)
         {
             if (id != produit.Id)
             {
@@ -261,7 +261,7 @@ namespace TpServeur1.Controllers
 
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Details", "Panier");
         }
     }
 }

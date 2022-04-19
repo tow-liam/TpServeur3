@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TpServeur1.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace TpServeur1.Controllers
 {
@@ -157,5 +158,20 @@ namespace TpServeur1.Controllers
         {
             return _context.Panier.Any(e => e.Id == id);
         }
+
+        // GET: Historique
+        public async Task<IActionResult> Historique()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var tpContext = _context.Commande.Where(e => e.UserGuid == userId);
+            return View(await tpContext.ToListAsync());
+        }
+        // GET: Historique admin
+        public async Task<IActionResult> HistoriqueAdmin()
+        {
+            var tpContext = _context.Commande;
+            return View("Historique", await tpContext.ToListAsync());
+        }
+
     }
 }

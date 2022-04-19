@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TpServeur1.Models;
 
 namespace TpServeur1.Migrations
 {
     [DbContext(typeof(TpContext))]
-    partial class TpContextModelSnapshot : ModelSnapshot
+    [Migration("20220419134628_MigImageBlob")]
+    partial class MigImageBlob
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,29 +45,6 @@ namespace TpServeur1.Migrations
                     b.HasKey("CommandeID");
 
                     b.ToTable("Commande");
-                });
-
-            modelBuilder.Entity("TpServeur1.Models.Evaluation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Avis")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Courriel")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Nom")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Prenom")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Evaluations");
                 });
 
             modelBuilder.Entity("TpServeur1.Models.Image", b =>
