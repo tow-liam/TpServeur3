@@ -33,6 +33,9 @@
                 @Html.DisplayNameFor(model => model.QteInventaire)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Prix)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Categorie)
             </th>
             <th></th>
@@ -40,37 +43,40 @@
     </thead>
     <tbody>
         @foreach (var item in Model) {
-                <tr>
-                    <td>
-                        @if (item.ImageId != null)
-                        {
-                            <img  class="img-thumbnail rounded" src="@string.Format("data:{0};base64,{1}", item.Image.ContentType, Convert.ToBase64String(item.Image.ImageData))" width="75" height="75"/>
-                        }
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nom)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Marque)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Taille)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.QteInventaire)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Categorie.Id)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
+        <tr>
+            <td>
+                @if (item.ImageId != null)
+                {
+                    <img class="img-thumbnail rounded" src="@string.Format("data:{0};base64,{1}", item.Image.ContentType, Convert.ToBase64String(item.Image.ImageData))" width="75" height="75" />
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Taille)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QteInventaire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prix)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categorie.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
         }
             </tbody>
         </table>

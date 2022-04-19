@@ -21,8 +21,14 @@
                             <p class="card-text">
                                 Disponibles: @Html.DisplayFor(modelItem => item.QteInventaire)
                             </p>
+                            <p class="card-text">
+                                Prix: @Html.DisplayFor(modelItem => item.Prix)
+                            </p>
                             <a asp-action="Details" asp-controller="Produit" asp-route-id="@item.Id" class="btn btn-primary">Détails</a>
-                            <button class="btn btn-primary">Ajouter au panier</button>
+                            @if (item.QteInventaire > 0)
+                            {
+                                <a class="btn btn-primary" asp-action="AjoutPanier" asp-controller="Produit" asp-route-id="@item.Id">Ajouter au panier</a>
+                                    }
                         </div>
                     </div>
                 </div>
